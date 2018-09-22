@@ -5,12 +5,31 @@ getLocation()
 const button = document.getElementById('show_button')
 button.addEventListener('click',hideshow,false);
 
-async function hideshow() {
-    document.getElementById('show_button').style.display = 'block'; 
-    this.style.display = 'none';
-    document.getElementById('answer').innerHTML = "TAK";
-    calculateAndRenderDirections()
+function hide() {
+  document.getElementById('answer').innerHTML = "TAK";
+  calculateAndRenderDirections()
+}
+
+function hideshow() {
+  let element = document.getElementById('show_button')
+  let policy = document.getElementById('policy')
+  fade(element)
+  fade(policy)
+  setTimeout(hide, 2000)
 }   
+
+function fade(element) {
+  var op = 1;  // initial opacity
+  var timer = setInterval(function () {
+      if (op <= 0.1){
+          clearInterval(timer);
+          element.style.display = 'none';
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op -= op * 0.1;
+  }, 50);
+}
 
 let map, marker;
 
