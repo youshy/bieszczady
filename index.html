@@ -8,9 +8,15 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 </head>
 <body>
-    <h3>Czy mam uciec w bieszczady?</h3>
-    <h1 id="answer"></h1>
+    <div id="content">
+        <h3>A może rzucić to wszystko i wyjechać w Bieszczady?</h3>
+        <h1 id="answer"></h1>
+        <button id="show_button">NA PEWNO?</button>
+        <p id="return"></p>
+    </div>
     <div id="map"></div>
     <script src="main.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCykoFJLhcxGyaZ3oZb3YfMEPo_bWl63tU&callback=initMap"
+    async defer></script>
 </body>
 </html>
