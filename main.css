@@ -8,6 +8,10 @@ html, body {
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+#loading {
+    display: none;
+}
+
 #content {
    text-align: center;
    height: auto;
@@ -19,6 +23,7 @@ html, body {
    top: 10%;
    margin-left: 25%;
    font-size: 50px;
+   display: none;
 }
 
 #policy {

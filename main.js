@@ -1,27 +1,44 @@
-const should = {}
+window.addEventListener("load", (e) => {
+  console.log("loaded!")
+})
 
 getLocation()
 
 const button = document.getElementById('show_button')
 button.addEventListener('click',hideshow,false);
 
+document.getElementById("question").innerHTML = "A MOŻE RZUCIĆ TO WSZYSTKO I WYJECHAĆ W BIESZCZADY?";
+document.getElementById("policy").innerHTML = "Aby to sprawdzić, musisz udostępnić przeglądarce dane o swoim położeniu. Nie są one nigdzie dalej zapisywane."
+document.getElementById("show_button").innerHTML = "NA PEWNO?"
+
 function hide() {
   document.getElementById('answer').innerHTML = "TAK";
   calculateAndRenderDirections()
 }
 
+const content = document.getElementById("content")
+
+setTimeout(() => {
+  content.style.display = "block"
+}, 3000)
+
+
 function hideshow() {
-  getLocation()
-  let element = document.getElementById('show_button')
-  let policy = document.getElementById('policy')
-  fade(element)
-  fade(policy)
-  setTimeout(hide, 2000)
+  if (returnPosition.lat !== undefined && returnPosition.lng !== undefined) {
+    let element = document.getElementById('show_button')
+    let policy = document.getElementById('policy')
+    fade(element)
+    fade(policy)
+    setTimeout(hide, 2000)
+  }
+  else {
+    getLocation()
+  }
 }   
 
 function fade(element) {
-  var op = 1;  // initial opacity
-  var timer = setInterval(function () {
+  let op = 1;  // initial opacity
+  let timer = setInterval(function () {
       if (op <= 0.1){
           clearInterval(timer);
           element.style.display = 'none';
@@ -170,10 +187,3 @@ const calculateAndRenderDirections = (origin, destination) => {
         }
     })
 }
-
-
-// Google maps api key
-// AIzaSyCykoFJLhcxGyaZ3oZb3YfMEPo_bWl63tU 
-
-// Google directions api key
-// AIzaSyD9-VAQ2nuVSQMVKa-LNTGpW0Jqfx_BjUA 
