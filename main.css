@@ -1,5 +1,6 @@
 #map {
     height: 100%;
+    display: none;
 }
 html, body {
     width: 100%;
@@ -9,6 +10,9 @@ html, body {
     font-family: 'Open Sans', sans-serif;
 }
 #loading {
+    display: none;
+}
+#alerted {
     display: none;
 }
 

@@ -2,6 +2,24 @@ window.addEventListener("load", (e) => {
   console.log("loaded!")
 })
 
+function isFacebookApp() {
+  var ua = navigator.userAgent || navigator.vendor || window.opera;
+  return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
+
+const checker = isFacebookApp()
+const content = document.getElementById("content")
+const mapped = document.getElementById("map")
+
+if (checker == true) {
+  document.getElementById("alerted").style.display = "block"
+} else {
+  mapped.style.display = "block";
+  setTimeout(() => {
+    content.style.display = "block"
+  }, 3000)
+}
+
 getLocation()
 
 const button = document.getElementById('show_button')
@@ -16,11 +34,8 @@ function hide() {
   calculateAndRenderDirections()
 }
 
-const content = document.getElementById("content")
 
-setTimeout(() => {
-  content.style.display = "block"
-}, 3000)
+
 
 
 function hideshow() {
