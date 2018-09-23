@@ -17,13 +17,15 @@ html, body {
    position: absolute;
    width: 50%;
    height: 50%;
-   top: 25%;
+   top: 10%;
    margin-left: 25%;
    font-size: 50px;
 }
 
 #policy {
     font-size: 20px;
+    border-radius: 25px;
+    background: #ffffff6c;
 }
 
 #layover {
@@ -31,7 +33,7 @@ html, body {
     width: 100%;
     position: absolute;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.3)
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 #show_button {
@@ -52,7 +54,8 @@ html, body {
 @media only screen 
 and (max-width : 550px) {
     #content {
-        font-size: 30px
+        font-size: 30px;
+        top: 10%;
     }
     #show_button {
         height: 50px;
