@@ -11,6 +11,7 @@ function hide() {
 }
 
 function hideshow() {
+  getLocation()
   let element = document.getElementById('show_button')
   let policy = document.getElementById('policy')
   fade(element)
@@ -54,7 +55,7 @@ function showPosition(position) {
 
 const bieszczady = {lat: 49.273, lng: 22.519}
 
-function initMap() {
+function initMap(center) {
     let mapCanvas = document.getElementById('map')
     let mapOptions = {
         center: bieszczady,
