@@ -34,11 +34,8 @@ function hide() {
   calculateAndRenderDirections()
 }
 
-
-
-
-
 function hideshow() {
+  getLocation()
   if (returnPosition.lat !== undefined && returnPosition.lng !== undefined) {
     let element = document.getElementById('show_button')
     let policy = document.getElementById('policy')
@@ -87,7 +84,7 @@ function showPosition(position) {
 
 const bieszczady = {lat: 49.273, lng: 22.519}
 
-function initMap(center) {
+function initMap() {
     let mapCanvas = document.getElementById('map')
     let mapOptions = {
         center: bieszczady,
